@@ -12,3 +12,7 @@ def admin():
 def users(name: str = Path(min_length=3, max_length=9), age: int = Path(ge=22, lt=111)):
     return {"name": name, "age": age}
 
+
+@app.get("/users_2/{phone}")
+def users(phone: str = Path(regex="^\d{11}$")):
+    return {"phone": phone}
