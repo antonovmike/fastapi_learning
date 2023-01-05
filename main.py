@@ -8,6 +8,7 @@ def admin():
     return {"message": "Hello admin"}
 
 # Second
-@app.get("/users/{name}")
-def users(name):
-    return {"user_name": name}
+@app.get("/users/{id}")
+def users(id: int):
+    return {"user_id": id}
+
