@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Path
 
 app = FastAPI()
 
@@ -8,7 +8,7 @@ def admin():
     return {"message": "Hello admin"}
 
 # Second
-@app.get("/users/{id}")
-def users(id: int):
-    return {"user_id": id}
+@app.get("/users/{name}")
+def users(name:str  = Path(min_length=3, max_length=9)):
+    return {"name": name}
 
