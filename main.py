@@ -1,14 +1,14 @@
 from fastapi import FastAPI
-from fastapi.responses import PlainTextResponse
+from fastapi.responses import HTMLResponse
 
 app = FastAPI()
 
 
-# Response
+# HTMLResponse
 @app.get("/")
 def root():
-    data = "Hello FastAPI"
-    return PlainTextResponse(content=data)
+    data = "<h2>Hello FastAPI</h2>"
+    return HTMLResponse(content=data)
 
 
 @app.get("/about")

@@ -10,7 +10,7 @@ The fastapi.Response class is the base class for all the response classes. Its a
 - media_type: specifies the MIME type of the response
 - headers: sets the response headers
 
-You can also use a descendant class to send plain text **PlainTextResponse**
+The **HTMLResponse** class is designed to simplify sending html code. It sets the Content-Type header to text/html:
 
 ```bash
 pip install fastapi
