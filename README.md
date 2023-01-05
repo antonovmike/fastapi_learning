@@ -1,7 +1,7 @@
 # fastapi_learning
 Learning FastAPI
 
-Sending files from the server
+Sending files from the server **FileResponse**
 
 ```bash
 pip install fastapi
