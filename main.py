@@ -1,4 +1,5 @@
-from fastapi import FastAPI, Response
+from fastapi import FastAPI
+from fastapi.responses import PlainTextResponse
 
 app = FastAPI()
 
@@ -7,7 +8,8 @@ app = FastAPI()
 @app.get("/")
 def root():
     data = "Hello FastAPI"
-    return Response(content=data, media_type="text/plain")
+    return PlainTextResponse(content=data)
+
 
 @app.get("/about")
 def about():
