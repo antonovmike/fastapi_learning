@@ -1,18 +1,18 @@
-from fastapi import FastAPI, Path
+from fastapi import FastAPI, Query
 
 app = FastAPI()
 
-# First
-@app.get("/users/admin")
-def admin():
-    return {"message": "Hello admin"}
+# v1
+# @app.get("/users")
+# def get_model(name, age):
+#     return {"user_name": name, "user_age": age}
 
-# Second
-@app.get("/users/{name}/{age}")
-def users(name: str = Path(min_length=3, max_length=9), age: int = Path(ge=22, lt=111)):
-    return {"name": name, "age": age}
+# v2
+# @app.get("/users")
+# def get_model(name: str, age: int = 18):
+#     return {"user_name": name, "user_age": age}
 
-
-@app.get("/users_2/{phone}")
-def users(phone: str = Path(regex="^\d{11}$")):
-    return {"phone": phone}
+# v3
+@app.get("/users")
+def users(name:str  = Query(min_length=3, max_length=9), age: int = 18):
+    return {"name": name, "user_age": age}
