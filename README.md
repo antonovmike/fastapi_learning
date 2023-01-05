@@ -1,6 +1,8 @@
 # fastapi_learning
 Learning FastAPI
 
+Data serialization
+
 ```bash
 pip install fastapi
 pip install "uvicorn[standard]"
@@ -15,3 +17,5 @@ Open
 http://127.0.0.1:8000/
 
 http://127.0.0.1:8000/about
+
+http://127.0.0.1:8000/documentation
