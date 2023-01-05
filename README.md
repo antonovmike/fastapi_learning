@@ -1,9 +1,7 @@
 # fastapi_learning
 Learning FastAPI
 
-Response
-
-FastAPI methods such as get(), post(), etc. allow you to specify the type of response using the **response_class** parameter
+Sending files from the server
 
 ```bash
 pip install fastapi

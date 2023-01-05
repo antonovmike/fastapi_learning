@@ -1,26 +1,14 @@
 from fastapi import FastAPI
-from fastapi.responses import PlainTextResponse, JSONResponse, HTMLResponse
+from fastapi.responses import FileResponse
 
 app = FastAPI()
 
+# v1
+@app.get("/")
+def root():
+    return FileResponse("public/index.html")
 
-# response_class
-@app.get("/text", response_class = PlainTextResponse)
-def root_text():
-    return "Hello FastAPI"
-
-
-@app.get("/html", response_class = HTMLResponse)
-def root_html():
-    return "<h2>Hello Hello FastAPI</h2>"
-
-
-@app.get("/about")
-def about():
-    return {"message": "FastAPI framework, high performance, easy to learn, fast to code, ready for production"}
-
-
-@app.get("/documentation")
-def about():
-    return {"message": "Documentation: https://fastapi.tiangolo.com"}
-
+# v2
+# @app.get("/file", response_class=FileResponse)
+# def root_html():
+#     return "public/index.html"
