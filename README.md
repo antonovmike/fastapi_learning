@@ -16,4 +16,4 @@ uvicorn main:app --reload
 ```
 Open
 
-http://127.0.0.1:8000/users/315
+http://127.0.0.1:8000/users/Your_Name/Your_Age
