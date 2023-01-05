@@ -1,18 +1,16 @@
 from fastapi import FastAPI
-from fastapi.responses import HTMLResponse
+from fastapi.responses import JSONResponse
+from fastapi.encoders import jsonable_encoder
 
 app = FastAPI()
 
 
-# @app.get("/")
-# def read_root():
-#     html_content = "<h2>Hello FastAPI</h2>"
-#     return HTMLResponse(content=html_content)
-
+# Response
 @app.get("/")
 def root():
-    return {"message": "Hello FastAPI"}
-
+    data = {"message": "Hello FastAPI"}
+    json_data = jsonable_encoder(data)
+    return JSONResponse(content=json_data)
 
 @app.get("/about")
 def about():
