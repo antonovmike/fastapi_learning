@@ -14,6 +14,10 @@
         Enter your age: <br />
         <input name="userage" id="userage" type="number" />
     </p>
+     <p>
+        Enter your languages: <br />
+        <input name="userage" id="languages" type="str" />
+    </p>
     <button onclick="send()">Send</button>
 <script>
     async function send(){
@@ -21,6 +25,7 @@
         // Get your name and age
         const username = document.getElementById("username").value;
         const userage = document.getElementById("userage").value;
+        const languages = document.getElementById("languages").value;
 
         // Send request
         const response = await fetch("/hello", {
@@ -28,7 +33,8 @@
                 headers: { "Accept": "application/json", "Content-Type": "application/json" },
                 body: JSON.stringify({
                     name: username,
-                    age: userage
+                    age: userage,
+                    languages: [languages]
                 })
             });
             if (response.ok) {
