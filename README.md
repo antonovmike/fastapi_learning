@@ -1,7 +1,7 @@
 # fastapi_learning
 Learning FastAPI
 
-Static files
+Get Data
 
 ```bash
 pip install fastapi
@@ -14,6 +14,4 @@ uvicorn main:app --reload
 ```
 Open
 
-http://127.0.0.1:8000/new
-
-http://127.0.0.1:8000/old
+http://127.0.0.1:8000/
