@@ -1,7 +1,7 @@
 # fastapi_learning
 Learning FastAPI
 
-Get Data
+Get Data as Class
 
 ```bash
 pip install fastapi
