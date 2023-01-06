@@ -1,6 +1,8 @@
 # fastapi_learning
 Learning FastAPI
 
+Get Data as Class
+
 ```bash
 pip install fastapi
 pip install "uvicorn[standard]"
