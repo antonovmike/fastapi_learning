@@ -1,7 +1,7 @@
 # fastapi_learning
 Learning FastAPI
 
-Redirect
+Static files
 
 ```bash
 pip install fastapi
