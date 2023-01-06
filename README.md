@@ -1,7 +1,7 @@
 # fastapi_learning
 Learning FastAPI
 
-Status code
+Redirect
 
 ```bash
 pip install fastapi
@@ -14,6 +14,6 @@ uvicorn main:app --reload
 ```
 Open
 
-http://127.0.0.1:8000/notfound
+http://127.0.0.1:8000/new
 
-http://127.0.0.1:8000/users/{ID}
+http://127.0.0.1:8000/old

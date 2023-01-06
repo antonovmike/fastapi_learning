@@ -1,24 +1,35 @@
-from fastapi import FastAPI, Response, Path
+import mimetypes
+from fastapi import FastAPI
+from fastapi.responses import RedirectResponse, PlainTextResponse
 
 app = FastAPI()
 
-# STATUS CODE
+# Redirect
+# @app.get("/old")
+# def old():
+#     return RedirectResponse("/new")
 
-# Example 1
-# @app.get("/notfound", status_code=404)
-# def notfound():
-#     return {"message": "Resource Not Found"}
+# OR 302 instead of default code 307 (v1)
+# @app.get("/old")
+# def old():
+#     return RedirectResponse("/new", status_code=302)
 
-# Example 2
-# @app.get("/notfound")
-# def notfound():
-#     return JSONResponse(content={"message": "Resource Not Found"}, status_code=404)
+# OR 302 instead of default code 307 (v1)
+# @app.get("/old", response_class= RedirectResponse, status_code=302)
+# def old():
+#     return "/new"
 
-# CHANGE STATUS CODE
-# http://127.0.0.1:8000/users/12
-@app.get("/users/{id}", status_code=200)
-def users(response: Response, id: int = Path()):
-    if id < 1:
-        response.status_code = 400
-        return {"message": "Incorrect Data"}
-    return {"message": f"Id = {id}"}
+# OR
+# @app.get("/old", response_class= RedirectResponse)
+# def old():
+#     return "/new"
+
+# OR
+@app.get("/old")
+def old():
+    return RedirectResponse("http://127.0.0.1:8000/new")
+
+
+@app.get("/new")
+def new():
+    return PlainTextResponse("New page")
